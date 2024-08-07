@@ -1,14 +1,18 @@
 CC = gcc
-CFLAGS = -lncurses
+CFLAGS = -lncurses -I$(IDIR)
 
+IDIR = ./include/
 SRCDIR = ./src/
 
 SOURCES = $(SRCDIR)*.c
 
-all: rogue
+all: rogue run clean
 
 rogue: 
 	$(CC) $(SOURCES) $(CFLAGS) -o $@
 
 run:
 	./rogue
+
+clean:
+	rm rogue
