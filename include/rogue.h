@@ -45,12 +45,19 @@ typedef struct Room {
 } Room;
 
 int screenSetup();
+
+/* Level methods */
 Room ** mapSetup();
+char ** saveLevelPos();
+
+
+/* Player methods */
 /* Here is declaring the method that returns a pointer to the struct Player*/
 Player * playerSetup();
 int playerMove(int y, int x, Player * user);
 int playerInput(int input, Player * user);
 int checkPosition(int newY, int newX, Player * user);
+
 
 /* Room methods */
 Room * createRoom(int x, int y, int height, int width);
